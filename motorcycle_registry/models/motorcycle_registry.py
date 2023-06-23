@@ -29,7 +29,6 @@ class MotorcycleRegistry(models.Model):
     owner_email = fields.Char(related='owner_id.email')
     
     # Vehicles fields
-    brand = fields.Char(compute='_compute_from_vin')
     make = fields.Char(compute='_compute_from_vin')
     model = fields.Char(compute='_compute_from_vin')
 
@@ -55,7 +54,7 @@ class MotorcycleRegistry(models.Model):
  
     @api.constrains('vin')
     def _check_vin_pattern(self):
-        pattern = '^[A-Z]{4}\d{2}[A-Z0-9]{2}\d{6}$'
+        pattern = '^[A-Z]{4}\d{2}[A-Z0-9]{2}\d{7}$'
         for registry in self.filtered(lambda r: r.vin):
             match = re.match(pattern, registry.vin)
             if not match:
