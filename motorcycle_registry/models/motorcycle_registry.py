@@ -77,8 +77,6 @@ class MotorcycleRegistry(models.Model):
         for registry in registries_with_vin:
             registry.make = registry.vin[:2]
             registry.model = registry.vin[2:4]
-            registry.year = registry.vin[4:6]
         for registry in (self - registries_with_vin):
             registry.make = False
             registry.model = False
-            registry.year = False
