@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="custom_snippets" inherit_id="website.snippets" name="Custom Snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div id="snippet_structure" class="o_panel">
+                <div class="o_panel_header">Motorcycles</div>
+                <div class="o_panel_body">
+                    <t t-snippet="ge05_total_motorcycle_miles.s-odometer" t-thumbnail="/ge05_total_motorcycle_miles/static/description/icon.png">
+                        <keywords>motorcycle, distance</keywords>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

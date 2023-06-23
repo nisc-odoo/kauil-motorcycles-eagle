@@ -1,0 +1,6 @@
+<templates id="template" xml:space="preserve">
+
+    <t t-name="website.s_countdown.end_message">
+    </t>
+
+</templates>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s-odometer" name="Odometer">
+        <section class="odometer-dis">
+            <div class="container">
+                <div class="text-center py-5">
+                    <h2 class="h1">Total miles:</h2>
+                </div>
+
+                <!-- test row element for js-->
+                <div class="row justify-content-center" id="odometer-row-dis"/>
+            </div>
+        </section>
+    </template>
+
+    <!-- To be used in JS for snippet options -->
+    <template id="odometer_options" inherit_id="website.snippet_options">
+        <xpath expr="//div[@data-js='Box']" position="before">
+            <div data-js="odometer-options.js" data-selector=".odometer-dis" data-drop-in=".o_mega_menu nav">
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
