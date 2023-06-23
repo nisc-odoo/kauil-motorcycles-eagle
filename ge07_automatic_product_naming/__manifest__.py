@@ -17,14 +17,6 @@ This module is an extension of the motorcycle registry. It changes the behaviour
     
     "depends": ["motorcycle_registry"],
     
-    "data": [
-
-    ],
-    
-    "demo": [
-
-    ],
-    
     "author": "kauil-motors",
     
     "website": "www.odoo.com",
