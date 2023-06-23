@@ -8,11 +8,13 @@ class StockLot(models.Model):
     def _get_next_serial(self, company, product):
         if product.detailed_type == 'motorcycle' and product.tracking != "none":
             if product.make and product.year and product.model:
-                temp_serial = product.make + product.model + str(product.year)[2:] + product.battery_capacity.upper()
-                temp_serial += self.env['ir.sequence'].next_by_code('stock.lot.serial')
+                temp_serial = product.make + product.model + str(product.year)[2:]
+                battery_capacity = 'XX' if not product.battery_capacity else product.battery_capacity
+                temp_serial += battery_capacity.upper()
+                temp_serial += self.env['ir.sequence'].next_by_code('stock.lot.serial')[1:]
                 return temp_serial
         else:
-            return super(company, product)
+            return self.super(StockLot, self)._get_next_serial(company, product)
 
     # @api.model
     # def _get_next_serial(self, company, product):
