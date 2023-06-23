@@ -75,10 +75,10 @@ class MotorcycleRegistry(models.Model):
         registries_with_vin = self.filtered(lambda r: r.vin)
         registries_with_vin._check_vin_pattern()
         for registry in registries_with_vin:
-            registry.brand = registry.vin[:2]
-            registry.make = registry.vin[2:4]
-            registry.model = registry.vin[4:6]
+            registry.make = registry.vin[:2]
+            registry.model = registry.vin[2:4]
+            registry.year = registry.vin[4:6]
         for registry in (self - registries_with_vin):
-            registry.brand = False
             registry.make = False
             registry.model = False
+            registry.year = False
