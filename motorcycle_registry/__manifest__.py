@@ -35,6 +35,8 @@ This Module is used to keep track of the Motorcycle Reistration and Ownership of
     "author": "kauil-motors",
     
     "website": "www.odoo.com",
+
+    "installable": True,
     
     "application": True,
     
