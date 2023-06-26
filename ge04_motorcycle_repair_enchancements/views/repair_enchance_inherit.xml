@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="repair_order_repair_encahnce_form_inherit" model="ir.ui.view">
+        <field name="name">repair.order.repair.encahnce.form.inherit</field>
+        <field name="model">repair.order</field>
+        <field name="inherit_id" ref="repair.view_repair_order_form"/>
+        <field name="arch" type="xml">
+<!--             Use Xpath -->
+            <xpath expr="//sheet//notebook" position="inside">
+                <page string="Motorcycle Data">
+                    <group>
+                        <group>
+                            <separator string="Motorcycle Information"/>
+                            <field name="vin"/>
+                            <field name="current_mileage" />
+                            <field name="registry_id" />
+                            
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+    </field>
+    </record>
+</odoo>

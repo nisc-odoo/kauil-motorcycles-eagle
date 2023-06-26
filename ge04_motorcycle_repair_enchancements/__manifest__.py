@@ -14,7 +14,8 @@
     "depends": ["motorcycle_registry","repair"],
     
     "data": [
-
+        'views/repair_enchance_inherit.xml',
+        'views/registry_repair_inherit.xml',
     ],
     
     "demo": [
