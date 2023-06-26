@@ -27,4 +27,6 @@
     "author": "kauil-motors",
     
     "website": "www.odoo.com",
+
+	"application": True,
 }
