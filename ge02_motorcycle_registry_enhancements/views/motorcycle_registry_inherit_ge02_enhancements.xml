@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record model="ir.ui.view" id="motorcycle_registry_inherit_ge02_enhancements_form">
+		<field name="name">motorcycle.registry.inherit.ge02.enhancements.form</field>
+		<field name="model">motorcycle.registry</field>
+		<field name="inherit_id" ref="motorcycle_registry.motorcycle_registry_view_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='license_plate']" position="after">
+				<field name="sale_order_id" />
+			</xpath>
+			<xpath expr="//field[@name='certificate_title']" position="after">
+			<br></br>
+				<label for="stock_lot_id" string="Stock Lot Id" />
+				<field name="stock_lot_id" />
+			</xpath>
+		</field>
+	</record>
+	
+	<record model="ir.ui.view" id="motorcycle_registry_inherit_ge02_enhancements_list">
+		<field name="name">motorcycle.registry.inherit.ge02.enhancements.list</field>
+		<field name="model">motorcycle.registry</field>
+		<field name="inherit_id" ref="motorcycle_registry.motorcycle_registry_view_list" />
+		<field name="arch" type="xml">
+			<field name="registry_number" position="after"> 
+				<!-- <field name="stock_lot_id" /> -->
+			</field>
+		</field>
+	</record>
+</odoo>
