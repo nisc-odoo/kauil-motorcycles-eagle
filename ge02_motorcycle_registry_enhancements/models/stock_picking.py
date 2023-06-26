@@ -7,7 +7,7 @@ class Picking(models.Model):
     def button_validate(self):
         
         sale_order = self.sale_id
-        if sale_order['mrp_production_ids']:
+        if sale_order.get('mrp_production_ids'):
             mrp_order = sale_order['mrp_production_ids']
             product = mrp_order['product_id']
             if product['detailed_type'] == 'motorcycle':
