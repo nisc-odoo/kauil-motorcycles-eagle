@@ -7,7 +7,7 @@ class MotorcycleRegistry(models.Model):
 	stock_lot_ids = fields.One2many(comodel_name='stock.lot', inverse_name='motorcycle_registry_id', string='Stock Lot Ids')
 	stock_lot_id = fields.Many2one(comodel_name='stock.lot', string="Stock Lot", compute="_get_first_lot", store=True, readonly=False)
 	
-	sale_order_id = fields.Many2one(comodel_name='sale.order.line', string="Related Sale Order", default=False)
+	sale_order_id = fields.Many2one(comodel_name='sale.order', string="Related Sale Order", default=False)
 
 	@api.constrains('stock_lot_ids')
 	def _check_stock_single(self):
