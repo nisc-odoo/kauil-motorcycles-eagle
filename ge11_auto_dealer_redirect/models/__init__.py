@@ -1,0 +1,1 @@
+from . import redirect_sales_inherit
