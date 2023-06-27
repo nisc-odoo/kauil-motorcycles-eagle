@@ -70,5 +70,15 @@
             </search>
         </field>
     </record>
-            
+
+
+	<record id="motorcycle_registry_map_view" model="ir.ui.view">
+		<field name="name">motorcycle.registry.view.map</field>
+		<field name="model">motorcycle.registry</field>
+		<field name="arch" type="xml">
+			<map string="Map View" res_partner="owner_id" routing="1" default_order="registry_date">
+				<field name="owner_id" string="Contact" />
+			</map>
+		</field>
+	</record>
 </odoo>
