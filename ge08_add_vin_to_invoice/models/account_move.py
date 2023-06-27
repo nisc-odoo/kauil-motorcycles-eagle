@@ -7,9 +7,10 @@ class AccountMove(models.Model):
 
     def _compute_vin(self):
         for record in self:
-            print("Invoice Origin")
-            print(record.invoice_origin)
-            linked_sale_order = self.env["sale.order"].search_read([("name", "=", record.invoice_origin)])
+            invoice_origin = record.invoice_origin
+            if (invoice_origin.startswith("P")):
+                return
+            linked_sale_order = self.env["sale.order"].search_read([("name", "=", invoice_origin)])
             mrp_id = linked_sale_order[0]["mrp_production_ids"]
             if (len(mrp_id) == 0):
                 record.vin = "KAAA0000000000"
