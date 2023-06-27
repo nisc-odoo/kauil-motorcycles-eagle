@@ -5,7 +5,7 @@ import re
 class RepairEnchance(models.Model):
     _inherit = "repair.order"
     
-    vin = fields.Char(string='VIN', required=True)
+    vin = fields.Char(string='VIN', required=False)
     current_mileage = fields.Float(string='Current Mileage')
     registry_id = fields.Many2one(comodel_name="motorcycle.registry",compute='_compute_from_vin_repair', required=False, store=True)
     
