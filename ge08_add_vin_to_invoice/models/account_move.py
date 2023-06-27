@@ -9,6 +9,7 @@ class AccountMove(models.Model):
         for record in self:
             invoice_origin = record.invoice_origin
             if (invoice_origin.startswith("P")):
+                record.vin = False
                 return
             linked_sale_order = self.env["sale.order"].search_read([("name", "=", invoice_origin)])
             mrp_id = linked_sale_order[0]["mrp_production_ids"]
