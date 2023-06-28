@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="discount_pricelist" model="product.pricelist">
+            <field name="name">New Customer Discount</field>
+            <field name="sequence">2</field>
+            <field name="discount_policy">without_discount</field>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <record id="discount_pricelist_rule" model="product.pricelist.item">
+            <field name="pricelist_id" ref="discount_pricelist"/>
+            <field name="compute_price">formula</field>
+            <field name="base">list_price</field>
+            <field name="price_surcharge">-2500.0</field>
+        </record>
+
+    </data>
+</odoo>
