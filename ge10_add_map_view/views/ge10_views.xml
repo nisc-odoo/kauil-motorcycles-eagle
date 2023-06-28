@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="motorcycle_registry_map_view" model="ir.ui.view">
+		<field name="name">motorcycle.registry.view.map</field>
+		<field name="model">motorcycle.registry</field>
+		<field name="priority">12</field>
+		<field name="arch" type="xml">
+			<map string="Map View" res_partner="owner_id" routing="1">
+				<field name="owner_id" string="Owner Id" />
+				<field name="vin" string="Vin" />
+				<field name="brand" string="Brand" />
+				<field name="make" string="Make" />
+				<field name="model" string="Model" />
+				<field name="license_plate" string="License Plate" />
+			</map>
+		</field>
+	</record>
+</odoo>
