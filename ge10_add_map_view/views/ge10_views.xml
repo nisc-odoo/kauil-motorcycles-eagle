@@ -8,7 +8,6 @@
 			<map string="Map View" res_partner="owner_id" routing="1">
 				<field name="owner_id" string="Owner Id" />
 				<field name="vin" string="Vin" />
-				<field name="brand" string="Brand" />
 				<field name="make" string="Make" />
 				<field name="model" string="Model" />
 				<field name="license_plate" string="License Plate" />
